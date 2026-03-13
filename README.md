@@ -26,6 +26,48 @@ Filename | Description
 [4. additional resources.md](</.instructions/4. additional resources.md>) | Additional resources for participants to explore after the workshop.
 
 
+## Quick Start (Windows PowerShell)
+
+This repository now includes:
+
+- Rock, Paper, Scissors, Lizard, Spock terminal game
+- Unit tests with `pytest`
+- REST API mode
+
+1. Install Python 3.11+ and ensure `python` is on your PATH.
+2. Open PowerShell in the project root.
+3. Run setup:
+
+```powershell
+./scripts/setup.ps1
+```
+
+4. Run the terminal game:
+
+```powershell
+./scripts/run-game.ps1
+```
+
+5. Run tests:
+
+```powershell
+./scripts/test.ps1
+```
+
+6. Start API server:
+
+```powershell
+./scripts/run-api.ps1
+```
+
+API examples in another PowerShell terminal:
+
+```powershell
+Invoke-RestMethod -Method Post -Uri "http://127.0.0.1:8000/rock"
+Invoke-RestMethod -Method Post -Uri "http://127.0.0.1:8000/play" -ContentType "application/json" -Body '{"choice":"spock"}'
+```
+
+
 ## Running a workshop?
 
 If you're planning to run a GitHub Copilot workshop, please review the [workshop guide](</.instructions/workshop organisers.md>) for tips and tricks to help you run a successful workshop. 
@@ -35,11 +77,12 @@ If you're planning to run a GitHub Copilot workshop, please review the [workshop
 
 In this project you will find: 
 
-* a `main.py` file with no contents
+* a `main.py` file containing the game logic, CLI flow, and optional REST API mode
 * a devcontainer that installs CodeTour and GitHub Copilot when the Codespace is created (If you want to use Codespaces)
 * an `.instructions` folder all the instructions for this workshop.
 * an `assets` folder containing images used in this workshop documentation.
 * a `.tours` folder that includes the CodeTour file if you wish to use it.
+* a `test_main.py` test suite and `scripts/` PowerShell helpers for setup/run/test
 
 
 
